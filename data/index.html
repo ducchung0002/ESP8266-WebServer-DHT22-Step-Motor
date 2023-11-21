@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real time humidity and temperature</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <h1>ESP8266 Web Server</h1>
+    <p>LED state <strong id="led_state">LOW</strong></p>
+    <button onclick="turnOnLED()" class="button"><img src="images/on.png" alt="LED ON" class="bulb">Turn LED ON</button>
+    <button onclick="turnOffLED()" class="button button2"><img src="images/off.png" alt="LED OFF" class="bulb">Turn LED OFF</button>
+
+    <h1>DHT sensor</h1>
+    <p>
+        <span class="sensor-labels"><img src="images/temperature.png" alt="temperature" class="sensor">Temperature</span>
+        <span id="temperature"></span>
+        <sup class="units">&deg;C</sup>
+    </p>
+
+    <p>
+        <span class="sensor-labels"><img src="images/humidity.png" alt="humidity" class="sensor">Humidity</span>
+        <span id="humidity"></span>
+        <sup class="units">&#37;</sup>
+    </p>
+
+    <h1>Step Motor</h1>
+    <form action="">
+        <label for="rotate-degree">Degree</label>
+        <select name="rotate-degree" id="rotate-degree">
+            <option value="45" selected>45</option>
+            <option value="90">90</option>
+            <option value="135">135</option>
+            <option value="180">180</option>
+        </select>
+        <input type="checkbox" name="CCW-checkbox" id="CCW-checkbox">
+        <label for="CCW-checkbox">CCW</label>
+        <input type="button" id="submit-btn" value="Rotate" class="button" onclick="rotateStepper()">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
